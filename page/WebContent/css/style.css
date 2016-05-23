@@ -1,0 +1,40 @@
+body{
+    text-align: center;
+    background-color:grey;
+    position:absolute;
+    height:100%;
+    width:100%;
+}
+#top{
+	background-color: lightgreen;
+	text-align: center;
+	border: 3px solid #73AD21;
+    height:10%;
+}
+#top h5.main{
+	text-decoration: underline;
+}
+#main{
+	height:50%;
+	border: 3px solid #73AD21;
+}
+#main form.register{
+	border: 3px solid #73AD21;
+    width:20%;
+}
+#bottom{
+	background-color: lightgreen;
+	text-align: center;
+	border: 3px solid #73AD21;
+    height:10%;
+}
+#bottom #Server{
+	border: 3px solid #73AD21;
+    width:49%;
+    float:left;
+}
+#bottom #User{
+	border: 3px solid #73AD21;
+    width:49%;
+    float:left;
+}
