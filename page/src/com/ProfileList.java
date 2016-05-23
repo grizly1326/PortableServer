@@ -10,12 +10,12 @@ import java.io.PrintWriter;
 import java.nio.charset.Charset;
 import java.util.ArrayList;
 
-public class List {
+public class ProfileList {
 	private static ArrayList<Profile> peopleList= new ArrayList<Profile>();
-	private static String splitString="//";
+	
 	private static String error="INFO: No error in Loading.";
 	public static String help;
-	private static String path="ProfileSave.txt";
+	
 	public static void init(){
 		//fill list, call load() or NOT.
 		load();
@@ -27,12 +27,12 @@ public class List {
 		String line;
 		String cut[];
 		try (
-			    InputStream fis = new FileInputStream(path);
+			    InputStream fis = new FileInputStream(Settings.profilePath);
 			    InputStreamReader isr = new InputStreamReader(fis, Charset.forName("UTF-8"));
 			    BufferedReader br = new BufferedReader(isr);
 			) {
 			    while ((line = br.readLine()) != null) {
-			    	cut=line.split(splitString);
+			    	cut=line.split(Settings.splitString);
 			    	System.out.println("LOADED to DB: "+line);
 			    	peopleList.add(new Profile(cut[0],cut[1],cut[2],Integer.parseInt(cut[3])));
 			    }
@@ -42,17 +42,19 @@ public class List {
 		} catch (IOException e) {
 			error="Error, while reading a file.";
 		}
+		System.out.println("Profile-DB LOADED.... ");
 	}
 	public static void save(){
 		try {
-			PrintWriter out = new PrintWriter(path);
+			PrintWriter out = new PrintWriter(Settings.profilePath);
 			for(Profile a : peopleList){
-				out.println(a.getName()+splitString+a.getSurname()+splitString+a.getEmail()+splitString+a.getAdmin());
+				out.println(a.getName()+Settings.splitString+a.getSurname()+Settings.splitString+a.getEmail()+Settings.splitString+a.getAdmin());
 			}
 			out.close();
 		} catch (FileNotFoundException e) {
 			error="cannot save to a file.";
 		}
+		System.out.println("Profile SAVED to DB.... ");
 	}
 	public static String errorcode(){
 		return error;

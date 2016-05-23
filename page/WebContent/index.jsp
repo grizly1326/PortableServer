@@ -19,13 +19,14 @@
 			E-mail: <input type="text" name="email"/><br>
 			<input type="submit" value="Register"/>
 		</form>
+		<%=MainMenu.printBox()%>
 	</div>
 	<div id="bottom">
 		<div id="Server">
-			Server: <%=List.errorcode() %>
+			Server: <%=ProfileList.errorcode() %>
 		</div>
 		<div id="User">
-			User: <%=List.errorcode() %>
+			User: <%=MainMenu.errorcode() %>
 		</div>
 	</div>
 </body>

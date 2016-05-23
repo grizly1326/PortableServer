@@ -7,7 +7,7 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-import com.List;
+import com.ProfileList;
 import com.Profile;
 
 @WebServlet("/RegisterServlet")
@@ -24,12 +24,12 @@ public class RegisterServlet extends HttpServlet {
 	}
 	
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		if(List.checkIfExist(request.getParameter("fname"),request.getParameter("lname"),request.getParameter("email"))==true){
+		if(ProfileList.checkIfExist(request.getParameter("fname"),request.getParameter("lname"),request.getParameter("email"))==true){
 			response.sendRedirect("");
 			System.out.println("INFO: Already in DB.");
 		}else{
-			List.addPerson(new Profile(request.getParameter("fname"),request.getParameter("lname"),request.getParameter("email"),0));
-			List.save();
+			ProfileList.addPerson(new Profile(request.getParameter("fname"),request.getParameter("lname"),request.getParameter("email"),0));
+			ProfileList.save();
 			System.out.println("INFO: Added to DB.");
 			response.sendRedirect("");
 		}

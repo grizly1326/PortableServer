@@ -8,7 +8,10 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 import com.Hello;
-import com.List;
+import com.ProfileList;
+import com.MainMenu;
+import com.MenuList;
+import com.Settings;
 
 
 /**
@@ -23,7 +26,8 @@ public class Init extends HttpServlet {
      */
     public Init() {
         super();
-        List.init();
+        ProfileList.init();
+        MenuList.loadString(Settings.stringPath, MenuList.getList(), MainMenu.errorcode());
         System.out.println(Hello.restart());
         //Here is the server side code....(Normal java program)
     }
