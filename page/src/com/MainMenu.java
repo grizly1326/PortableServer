@@ -9,11 +9,19 @@ public class MainMenu {
 		String out=null;
 		boolean one=false;
 		for(int i=0;i<MenuList.getList().size();i++){
-			if(one==false){
+			switch(MenuList.getList().get(i).getStatus()){
+			case 0:if(one==false){
 				out=first+MenuList.getList().get(i).getPath()+second+MenuList.getList().get(i).getName()+third;
 				one=true;
 			}else{
 				out+=first+MenuList.getList().get(i).getPath()+second+MenuList.getList().get(i).getName()+third;
+			}break;
+			case 1: if(one==false){
+				out=MenuList.getList().get(i).getCode();
+				one=true;
+			}else{
+				out+=MenuList.getList().get(i).getCode();	
+			}break;
 			}
 		}
 		return out;

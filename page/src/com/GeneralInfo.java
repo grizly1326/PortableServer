@@ -1,6 +1,6 @@
 package com;
 
-public class Hello {
+public class GeneralInfo {
 	public static String restart(){
 		return "OK: Server has restared and loaded.";
 	}

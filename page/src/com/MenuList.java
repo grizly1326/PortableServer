@@ -25,8 +25,8 @@ public class MenuList {
 			) {
 			    while ((line = br.readLine()) != null) {
 			    	cut=line.split(Settings.splitString);
-			    	System.out.println(cut[0]+" 	Path: "+cut[1]);
-			    	list.add(new MenuBlock(cut[0],cut[1]));
+			    	System.out.println("Status: "+cut[0]+" 	Name: "+cut[1]+" 	Path: "+cut[2]+" 	SpecialCode: "+cut[3]);			//only for debuging....
+			    	list.add(new MenuBlock(Integer.valueOf(cut[0]),cut[1],cut[2]+".jsp",cut[3]));
 			    }
 			}
 		catch (FileNotFoundException e) {
@@ -34,6 +34,7 @@ public class MenuList {
 		} catch (IOException e) {
 			error="Error, while reading a file.";
 		}
-		System.out.println("MENU LOADED.... ");
+		error="INFO: No error in Loading Menu.";
+		System.out.println("MENU LOADED.... ");				//only for debuging....
 	}
 }

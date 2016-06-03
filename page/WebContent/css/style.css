@@ -12,25 +12,66 @@ body{
 	text-align: center;
 	border: 3px solid #73AD21;
     height:10%;
+
 }
-#top h5.main{
-	text-decoration: underline;
+#top #back{
+	width:33%;
+	float:left;
+	height:100%;
+	color:black;
+	font-weight: bold;
+	display: flex;
+    align-items: center;
+    justify-content: center;
+}
+#top #back:hover{
+	background-color:white;
+}
+#top #select{
+	width:33%;
+	float:left;
+	height:100%;
+	color:black;
+	font-weight: bold;
+	display: flex;
+    align-items: center;
+    justify-content: center;
+}
+#top #select:hover{
+	background-color:white;
+}
+#top #name{
+	width:33%;
+	float:left;
+	height:100%;
+	color:black;
+	font-weight: bold;
+	display: flex;
+    align-items: center;
+    justify-content: center;
 }
 #main{
+	
 	height:80%;
 	border: 3px solid #73AD21;
 	overflow: auto;
 }
+#main form{
+	height:100%;
+}
 #main #Box{
+	background-color:lightgrey;
 	border: 3px solid #73AD21;
 	float:left;
-	width:33%;
+	width:25%;
 	height:33%;
 }
+#main #Box:hover{
+	background-color:white;
+}
+
 #main form.register{
-	border: 3px solid #73AD21;
-    width:33%;
-    height:33%;
+
 }
 #bottom{
 	border: 3px solid #73AD21;
@@ -40,12 +81,14 @@ body{
     height:10%;
 }
 #bottom #Server{
-	
-    width:50%;
+    width:33%;
     float:left;
 }
 #bottom #User{
-	
-    width:50%;
+    width:33%;
+    float:left;
+}
+#bottom #Player{
+    width:33%;
     float:left;
 }

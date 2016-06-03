@@ -10,10 +10,12 @@
 </head>
 <body>
 	<div id="top">
-		<div id="name"><h5 class="main">HI: <%= GeneralInfo.printName() %></h5></div>
+		<a href="./Music.jsp"><div id="back">Go Back to Music</div></a>
+		<div id="name">HI: <%= GeneralInfo.printName() %></div>
+		<a href="SaveFileDestination"><div id="back">Save</div></a>
 	</div>
 	<div id="main">
-		<%=MainMenu.printBox()%>
+		<%=MediaList.printDir()%>
 	</div>
 	<div id="bottom">
 		<div id="Server">

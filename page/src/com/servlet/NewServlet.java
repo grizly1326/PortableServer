@@ -7,34 +7,42 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-import com.ProfileList;
-import com.Profile;
+import com.Filegetter;
+import com.Settings;
 
-@WebServlet("/RegisterServlet")
-public class RegisterServlet extends HttpServlet {
+/**
+ * Servlet implementation class NewServlet
+ */
+@WebServlet("/NewServlet")
+public class NewServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
-    public RegisterServlet() {
+       
+    /**
+     * @see HttpServlet#HttpServlet()
+     */
+    public NewServlet() {
         super();
         // TODO Auto-generated constructor stub
     }
-    
+
+	/**
+	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
+	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// TODO Auto-generated method stub
 		response.getWriter().append("Served at: ").append(request.getContextPath());
 	}
-	
+
+	/**
+	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
+	 */
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		System.out.println("DEBUG......");
-		if(ProfileList.checkIfExist(request.getParameter("fname"),request.getParameter("lname"),request.getParameter("email"))==true){
-			response.sendRedirect("");
-			System.out.println("INFO: Already in DB.");
-		}else{
-			ProfileList.addPerson(new Profile(request.getParameter("fname"),request.getParameter("lname"),request.getParameter("email"),0));
-			ProfileList.save();
-			System.out.println("INFO: Added to DB.");
-			response.sendRedirect("");					//change this else to redirect to a page with out the register and automaticly login.
+		Settings.dirPathSelected=request.getParameter("button");
+		if(Settings.dirPathSelected==null){
+			Settings.dirPathSelected=Settings.musicPath;
 		}
-		
+		Filegetter.fileLister(Settings.dirPathSelected);
+		response.sendRedirect("FileBrowser.jsp");					//same web-page.
 	}
 
 }

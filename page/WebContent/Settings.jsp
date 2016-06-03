@@ -13,7 +13,7 @@
 		<div id="name"><h5 class="main">HI: <%= GeneralInfo.printName() %></h5></div>
 	</div>
 	<div id="main">
-		<%=MainMenu.printBox()%>
+		
 	</div>
 	<div id="bottom">
 		<div id="Server">

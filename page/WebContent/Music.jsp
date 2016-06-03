@@ -10,14 +10,19 @@
 </head>
 <body>
 	<div id="top">
-		<div id="name"><h5 class="main">HI: <%= GeneralInfo.printName() %></h5></div>
+		<a href="./"><div id="back">Go Back to Menu</div></a>
+		<div id="name">HI: <%= GeneralInfo.printName() %></div>
+		<a href="FileBrowser.jsp"><div id="select">Dir Select</div></a>
 	</div>
 	<div id="main">
-		<%=MainMenu.printBox()%>
+		<%=MediaList.printMusic()%>
 	</div>
 	<div id="bottom">
 		<div id="Server">
 			Server: <%=ProfileList.errorcode() %>
+		</div>
+		<div id="Player">
+			<%=MediaPlayer.getMusicPlayer() %>
 		</div>
 		<div id="User">
 			User: <%=MainMenu.errorcode() %>
